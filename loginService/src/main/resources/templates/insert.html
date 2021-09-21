@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert New Employee</title>
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div>
+	<h1>New Customer Form</h1>
+	</br>
+	<form th:object="${customer}" th:action="@{/save_customer}" method="post">
+		<table border="1">
+			<tr>
+				<td>Customer Firstname</td>
+				<td><input type="text" th:field="*{firstName}" /></td>
+			</tr>
+			<tr>
+				<td>Customer Lastname</td>
+				<td><input type="text" th:field="*{lastName}" /></td>
+			</tr>
+			<tr>
+				<td>Customer email</td>
+				<td><input type="text" th:field="*{email}" /></td>
+			</tr>
+			<tr>
+				<td>Customer password</td>
+				<td><input type="text" th:field="*{password}" /></td>
+			</tr>
+			<tr>
+				<td><button type="submit">Insert</button></td>
+			</tr>			
+		</table>
+	</form>
+	<div>
+     	<button onclick="goBack()">Back</button>
+     	
+		<script>
+			function goBack() {
+ 	 		window.history.back();
+			}
+				
+		</script>
+     </div>
+	</div>
+</body>
